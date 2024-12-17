@@ -52,8 +52,7 @@ function App() {
     if (!searchText.trim()) {
       setContacts([]); return;
     }
-
-    const response = await axios.get(`http://localhost:3000/search?searchText=${searchText}`);
+    const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/search?searchText=${searchText}`);
     setContacts(response.data);
   };
 
